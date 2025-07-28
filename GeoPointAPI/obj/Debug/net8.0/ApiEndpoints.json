@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "GeoPointAPI.Controllers.PointController",
+    "Method": "GetAll",
+    "RelativePath": "api/Point",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GeoPointAPI.Controllers.PointController",
+    "Method": "Add",
+    "RelativePath": "api/Point",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "GeoPointAPI.DTOs.Points.PointAddDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GeoPointAPI.Controllers.PointController",
+    "Method": "Get",
+    "RelativePath": "api/Point/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GeoPointAPI.Controllers.PointController",
+    "Method": "Update",
+    "RelativePath": "api/Point/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "GeoPointAPI.DTOs.Points.PointUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GeoPointAPI.Controllers.PointController",
+    "Method": "Delete",
+    "RelativePath": "api/Point/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

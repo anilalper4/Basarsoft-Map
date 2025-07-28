@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "GeoPointAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Point": {
+      "get": {
+        "tags": [
+          "Point"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Point"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PointAddDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PointAddDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PointAddDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Point/{id}": {
+      "get": {
+        "tags": [
+          "Point"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Point"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PointUpdateDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PointUpdateDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PointUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Point"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PointAddDTO": {
+        "required": [
+          "wkt"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Noktanın adı"
+          },
+          "wkt": {
+            "minLength": 1,
+            "pattern": "^POINT\\s?\\((-?\\d+(\\.\\d+)?\\s-?\\d+(\\.\\d+)?)\\)$",
+            "type": "string",
+            "description": "Geometrik verinin WKT formatı. Örnek: 'POINT(29.0 41.0)'"
+          }
+        },
+        "additionalProperties": false,
+        "example": {
+          "name": "string",
+          "wkt": "POINT(29.0 41.0)"
+        }
+      },
+      "PointUpdateDTO": {
+        "required": [
+          "wkt"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Güncellenecek noktanın adı"
+          },
+          "wkt": {
+            "minLength": 1,
+            "pattern": "^POINT\\s?\\((-?\\d+(\\.\\d+)?\\s-?\\d+(\\.\\d+)?)\\)$",
+            "type": "string",
+            "description": "Güncellenmiş geometrik verinin WKT formatı. Örnek: 'POINT(29.0 41.0)'"
+          }
+        },
+        "additionalProperties": false,
+        "example": {
+          "name": "string",
+          "wkt": "POINT(30 40)"
+        }
+      }
+    }
+  }
+}
